@@ -25,7 +25,7 @@ import java.awt.GridLayout;
 import java.awt.Insets;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
-import javax.swing.*;
+
 import javax.swing.border.EmptyBorder;
 import javax.swing.plaf.basic.BasicArrowButton;
 
@@ -43,9 +43,9 @@ public class MainPanel extends JFrame {
     JComboBox<String> easing = new JComboBox<>(AnimationPanel.EASING_OPTIONS);
 
 
-    JPanel main = new JPanel(new BorderLayout(5,5));
-    JPanel main1 = new JPanel(new BorderLayout(5,5));
-    JPanel main2 = new JPanel(new BorderLayout(5,5));
+    JPanel main = new JPanel(new BorderLayout(5, 5));
+    JPanel main1 = new JPanel(new BorderLayout(5, 5));
+    JPanel main2 = new JPanel(new BorderLayout(5, 5));
 
 
     GridLayout myGraphLayout = new GridLayout(1, 1);
@@ -91,13 +91,13 @@ public class MainPanel extends JFrame {
         myGraphs.add(myCycle.myView);
         main.setBorder(new EmptyBorder(new Insets(5, 5, 5, 5)));
 
-        main.add(main1,BorderLayout.CENTER);
+        main.add(main1, BorderLayout.CENTER);
 
-        main.add(main2,BorderLayout.SOUTH);
-        main2.add(animationPanel,BorderLayout.CENTER);
-        main1.add(myGraphs,BorderLayout.CENTER);
-        main2.add(myXmlScrollPane,BorderLayout.EAST);
-        main1.add(base,BorderLayout.EAST);
+        main.add(main2, BorderLayout.SOUTH);
+        main2.add(animationPanel, BorderLayout.CENTER);
+        main1.add(myGraphs, BorderLayout.CENTER);
+        main2.add(myXmlScrollPane, BorderLayout.EAST);
+        main1.add(base, BorderLayout.EAST);
 
         myXmlScrollPane.setPreferredSize(new Dimension(100, 300));
         BasicArrowButton next = new BasicArrowButton(BasicArrowButton.EAST);

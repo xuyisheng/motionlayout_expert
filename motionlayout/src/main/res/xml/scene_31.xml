@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+        <KeyFrameSet>
+            <KeyPosition
+                motion:motionTarget="@+id/tv1"
+                motion:framePosition="50"
+                motion:keyPositionType="pathRelative"
+                motion:percentX="0.72"
+                motion:percentY="0.295" />
+            <KeyPosition
+                motion:motionTarget="@+id/tv2"
+                motion:framePosition="50"
+                motion:keyPositionType="pathRelative"
+                motion:percentX="0.28"
+                motion:percentY="0.3" />
+            <KeyPosition
+                motion:motionTarget="@+id/tv3"
+                motion:framePosition="50"
+                motion:keyPositionType="pathRelative"
+                motion:percentX="0.443"
+                motion:percentY="0.387" />
+            <KeyPosition
+                motion:motionTarget="@+id/tv4"
+                motion:framePosition="50"
+                motion:keyPositionType="pathRelative"
+                motion:percentX="0.728"
+                motion:percentY="0.226" />
+        </KeyFrameSet>
+        <OnClick />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start"></ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintHorizontal_chainStyle="packed"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toStartOf="@+id/tv2" />
+        <Constraint
+            android:id="@+id/tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintHorizontal_chainStyle="packed"
+            motion:layout_constraintTop_toTopOf="@+id/tv1"
+            motion:layout_constraintStart_toEndOf="@+id/tv2"
+            motion:layout_constraintEnd_toStartOf="@+id/tv4" />
+        <Constraint
+            android:id="@+id/tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toTopOf="@+id/tv1"
+            motion:layout_constraintStart_toEndOf="@+id/tv1"
+            motion:layout_constraintEnd_toStartOf="@+id/tv3" />
+        <Constraint
+            android:id="@+id/tv4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toEndOf="@+id/tv3"
+            motion:layout_constraintTop_toTopOf="@+id/tv3"
+            motion:layout_constraintEnd_toEndOf="parent" />
+    </ConstraintSet>
+</MotionScene>

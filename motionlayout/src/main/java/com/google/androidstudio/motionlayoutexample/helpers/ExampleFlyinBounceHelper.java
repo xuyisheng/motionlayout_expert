@@ -46,11 +46,11 @@ public class ExampleFlyinBounceHelper extends ConstraintHelper {
      */
     @Override
     public void updatePreLayout(ConstraintLayout container) {
-        if (mContainer!=container) {
+        if (mContainer != container) {
             View[] views = getViews(container);
             for (int i = 0; i < mCount; i++) {
                 View view = views[i];
-                ObjectAnimator animator = ObjectAnimator.ofFloat(view, "translationX", - 2000, 0).setDuration(1000);
+                ObjectAnimator animator = ObjectAnimator.ofFloat(view, "translationX", -2000, 0).setDuration(1000);
                 animator.setInterpolator(new BounceInterpolator());
                 animator.start();
             }

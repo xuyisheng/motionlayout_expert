@@ -20,12 +20,11 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.MotionLayout
-import androidx.constraintlayout.motion.widget.MotionScene
 import androidx.fragment.app.Fragment
 import com.google.androidstudio.motionlayoutexample.R
 import kotlinx.android.synthetic.main.main_activity.*
 
-class FragmentExample2Activity: AppCompatActivity(), View.OnClickListener, MotionLayout.TransitionListener {
+class FragmentExample2Activity : AppCompatActivity(), View.OnClickListener, MotionLayout.TransitionListener {
 
     // TODO: Extract the common code with FragmentExampleActivity
     private var lastProgress = 0f

@@ -34,6 +34,7 @@ class ColorHelper {
                     (green(color) + GRADIENT) % 256,
                     (blue(color) + GRADIENT) % 256)
         }
+
         /**
          * Returns a different color somewhat contrasting.
          */

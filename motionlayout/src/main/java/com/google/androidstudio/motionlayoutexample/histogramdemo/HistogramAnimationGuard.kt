@@ -28,12 +28,12 @@ class HistogramAnimationGuard {
      * @return true if animation should wait. False otherwise.
      */
     val wait: Boolean
-    get() {
-        if (interruptible) {
-            return false
+        get() {
+            if (interruptible) {
+                return false
+            }
+            return animating.get()
         }
-        return animating.get()
-    }
 
     /**
      * Allows animation to be interruptible or not. When interruptible, a new animation can start
@@ -52,8 +52,8 @@ class HistogramAnimationGuard {
             animating.set(false)
         }
 
-        override fun onTransitionTrigger(p0: MotionLayout?, p1: Int, p2: Boolean, p3: Float) { }
-        override fun onTransitionChange(p0: MotionLayout?, p1: Int, p2: Int, p3: Float) { }
+        override fun onTransitionTrigger(p0: MotionLayout?, p1: Int, p2: Boolean, p3: Float) {}
+        override fun onTransitionChange(p0: MotionLayout?, p1: Int, p2: Int, p3: Float) {}
     }
 
 }

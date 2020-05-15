@@ -63,16 +63,18 @@ class HistogramWidget : MotionLayout {
      * Set by custom attribute [R.styleable.HistogramWidget_columns] in xml.
      */
     var barsSize = 0
-        private set(value) { field = value }
+        private set(value) {
+            field = value
+        }
 
     /**
      * The list of View ids of the bar in the histogram in order.
      */
     val barIds: List<Int> get() = currentBars.map { it.id }
 
-    constructor(context: Context, attrs: AttributeSet?): this(context, attrs, 0)
+    constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
 
-    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int):
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
             super(context, attrs, defStyleAttr) {
         val array = context.theme.obtainStyledAttributes(
                 attrs, R.styleable.HistogramWidget, 0, 0)
@@ -179,12 +181,12 @@ class HistogramWidget : MotionLayout {
         startSet.createHorizontalChain(
                 ConstraintSet.PARENT_ID, ConstraintSet.LEFT,
                 ConstraintSet.PARENT_ID, ConstraintSet.RIGHT,
-                currentBars.map{ it.id }.toIntArray(), weights, LayoutParams.CHAIN_SPREAD)
+                currentBars.map { it.id }.toIntArray(), weights, LayoutParams.CHAIN_SPREAD)
         val endSet: ConstraintSet = getConstraintSet(barTransition!!.endConstraintSetId)
         endSet.createHorizontalChain(
                 ConstraintSet.PARENT_ID, ConstraintSet.LEFT,
                 ConstraintSet.PARENT_ID, ConstraintSet.RIGHT,
-                nextBars.map{ it.id }.toIntArray(), weights, LayoutParams.CHAIN_SPREAD)
+                nextBars.map { it.id }.toIntArray(), weights, LayoutParams.CHAIN_SPREAD)
 
         return ArrayList(nextBars)
     }

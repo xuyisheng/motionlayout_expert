@@ -26,7 +26,7 @@ import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.google.androidstudio.motionlayoutexample.R
 
-class CustomAdapter(private val userList: ArrayList<User>): RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
+class CustomAdapter(private val userList: ArrayList<User>) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.txtName.text = userList[position].name
@@ -56,7 +56,7 @@ class CustomAdapter(private val userList: ArrayList<User>): RecyclerView.Adapter
         return userList.size
     }
 
-    class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val txtName = itemView.findViewById(R.id.txtName) as TextView
         val txtTitle = itemView.findViewById(R.id.txtTitle) as TextView
     }

@@ -24,9 +24,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.androidstudio.motionlayoutexample.R
-import com.google.androidstudio.motionlayoutexample.youtubedemo.YouTubeDemoViewHolder.CatRowViewHolder
-import com.google.androidstudio.motionlayoutexample.youtubedemo.YouTubeDemoViewHolder.TextDescriptionViewHolder
-import com.google.androidstudio.motionlayoutexample.youtubedemo.YouTubeDemoViewHolder.TextHeaderViewHolder
+import com.google.androidstudio.motionlayoutexample.youtubedemo.YouTubeDemoViewHolder.*
 
 class FrontPhotosAdapter : RecyclerView.Adapter<YouTubeDemoViewHolder>() {
 
@@ -34,8 +32,8 @@ class FrontPhotosAdapter : RecyclerView.Adapter<YouTubeDemoViewHolder>() {
         val inflater = LayoutInflater.from(parent.context)
         val itemView = inflater.inflate(viewType, parent, false)
         return when (viewType) {
-            R.layout.motion_24_recyclerview_expanded_text_header -> TextHeaderViewHolder (itemView)
-            R.layout.motion_24_recyclerview_expanded_text_description -> TextDescriptionViewHolder (itemView)
+            R.layout.motion_24_recyclerview_expanded_text_header -> TextHeaderViewHolder(itemView)
+            R.layout.motion_24_recyclerview_expanded_text_description -> TextDescriptionViewHolder(itemView)
             R.layout.motion_24_recyclerview_expanded_row -> CatRowViewHolder(itemView)
             else -> throw IllegalStateException("Unknown viewType $viewType")
         }
@@ -43,14 +41,16 @@ class FrontPhotosAdapter : RecyclerView.Adapter<YouTubeDemoViewHolder>() {
 
     override fun onBindViewHolder(holder: YouTubeDemoViewHolder, position: Int) {
         when (holder) {
-            is TextHeaderViewHolder -> {}
-            is TextDescriptionViewHolder -> {}
+            is TextHeaderViewHolder -> {
+            }
+            is TextDescriptionViewHolder -> {
+            }
             is CatRowViewHolder -> {
                 val imagePosition = position - 2
                 holder.textView.text = holder.textView.resources.getString(R.string.cat_n, imagePosition)
                 Glide.with(holder.imageView)
-                    .load(Cats.catImages[imagePosition])
-                    .into(holder.imageView)
+                        .load(Cats.catImages[imagePosition])
+                        .into(holder.imageView)
             }
         }
     }
@@ -73,15 +73,15 @@ class FrontPhotosAdapter : RecyclerView.Adapter<YouTubeDemoViewHolder>() {
 sealed class YouTubeDemoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     class TextHeaderViewHolder(
-        itemView: View
+            itemView: View
     ) : YouTubeDemoViewHolder(itemView)
 
     class TextDescriptionViewHolder(
-        itemView: View
+            itemView: View
     ) : YouTubeDemoViewHolder(itemView)
 
     class CatRowViewHolder(
-        itemView: View
+            itemView: View
     ) : YouTubeDemoViewHolder(itemView) {
         val imageView = itemView.findViewById(R.id.image_row) as ImageView
         val textView = itemView.findViewById(R.id.text_row) as TextView

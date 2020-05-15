@@ -20,7 +20,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.MotionLayout
-import androidx.constraintlayout.motion.widget.MotionScene
 import androidx.fragment.app.Fragment
 import com.google.androidstudio.motionlayoutexample.R
 import kotlinx.android.synthetic.main.main_activity.*
@@ -28,8 +27,8 @@ import kotlinx.android.synthetic.main.main_activity.*
 class FragmentExampleActivity : AppCompatActivity(), View.OnClickListener, MotionLayout.TransitionListener {
 
     private var lastProgress = 0f
-    private var fragment : Fragment? = null
-    private var last : Float = 0f
+    private var fragment: Fragment? = null
+    private var last: Float = 0f
 
     override fun onTransitionChange(p0: MotionLayout?, p1: Int, p2: Int, p3: Float) {
         if (p3 - lastProgress > 0) {
@@ -41,9 +40,9 @@ class FragmentExampleActivity : AppCompatActivity(), View.OnClickListener, Motio
                         .setCustomAnimations(R.animator.show, 0)
                 fragment = SecondFragment.newInstance().also {
                     transaction
-                        .setCustomAnimations(R.animator.show, 0)
-                        .replace(R.id.container, it)
-                        .commitNow()
+                            .setCustomAnimations(R.animator.show, 0)
+                            .replace(R.id.container, it)
+                            .commitNow()
                 }
             }
         } else {
@@ -55,8 +54,8 @@ class FragmentExampleActivity : AppCompatActivity(), View.OnClickListener, Motio
                         .setCustomAnimations(0, R.animator.hide)
                 fragment = MainFragment.newInstance().also {
                     transaction
-                        .replace(R.id.container, it)
-                        .commitNow()
+                            .replace(R.id.container, it)
+                            .commitNow()
                 }
             }
         }
@@ -78,8 +77,8 @@ class FragmentExampleActivity : AppCompatActivity(), View.OnClickListener, Motio
         if (savedInstanceState == null) {
             fragment = MainFragment.newInstance().also {
                 supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, it)
-                    .commitNow()
+                        .replace(R.id.container, it)
+                        .commitNow()
             }
         }
         motionLayout.setTransitionListener(this)
@@ -99,8 +98,8 @@ class FragmentExampleActivity : AppCompatActivity(), View.OnClickListener, Motio
                 MainFragment.newInstance()
             }.also {
                 transaction
-                    .replace(R.id.container, it)
-                    .commitNow()
+                        .replace(R.id.container, it)
+                        .commitNow()
             }
         }
     }

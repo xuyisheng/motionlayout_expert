@@ -27,7 +27,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.androidstudio.motionlayoutexample.R
 import kotlinx.android.synthetic.main.histogram_layout.*
-import java.lang.RuntimeException
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -126,7 +125,7 @@ class HistogramActivity : AppCompatActivity() {
                     throw RuntimeException("Restoring array doesn't match the view size.")
                 }
 
-                bars = ArrayList(bars.mapIndexed{ i, metaData ->
+                bars = ArrayList(bars.mapIndexed { i, metaData ->
                     HistogramBarMetaData(widget!!.barIds[i], metaData)
                 })
                 widget!!.setData(bars)

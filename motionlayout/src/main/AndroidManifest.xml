@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   Copyright (C) 2018 The Android Open Source Project
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -30,13 +29,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DemoActivity"/>
-        <activity android:name=".viewpagerdemo.ViewPagerActivity"/>
-        <activity android:name=".viewpagerdemo.ViewPagerActivity2"/>
-        <activity android:name=".fragmentsdemo.FragmentExampleActivity"/>
-        <activity android:name=".fragmentsdemo.FragmentExample2Activity"/>
+        <activity android:name=".DemoActivity" />
+        <activity android:name=".viewpagerdemo.ViewPagerActivity" />
+        <activity android:name=".viewpagerdemo.ViewPagerActivity2" />
+        <activity android:name=".fragmentsdemo.FragmentExampleActivity" />
+        <activity android:name=".fragmentsdemo.FragmentExample2Activity" />
         <activity android:name=".youtubedemo.YouTubeDemoActivity" />
         <activity android:name=".histogramdemo.HistogramActivity" />
+        <activity android:name=".ListenerActivity" />
     </application>
 
 </manifest>

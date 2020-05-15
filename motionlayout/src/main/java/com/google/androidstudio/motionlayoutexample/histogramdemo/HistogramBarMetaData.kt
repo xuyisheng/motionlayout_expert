@@ -35,14 +35,14 @@ data class HistogramBarMetaData(
         val barTextColour: Int,
         val name: String = id.toString()) : Parcelable {
 
-    constructor(id: Int, other: HistogramBarMetaData): this(
+    constructor(id: Int, other: HistogramBarMetaData) : this(
             id,
             other.height,
             other.barColour,
             other.barTextColour,
             other.name)
 
-    private constructor(source: Parcel): this(
+    private constructor(source: Parcel) : this(
             source.readInt(),
             source.readFloat(),
             source.readInt(),

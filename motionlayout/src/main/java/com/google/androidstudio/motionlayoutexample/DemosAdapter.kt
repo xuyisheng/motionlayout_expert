@@ -25,15 +25,15 @@ import androidx.recyclerview.widget.RecyclerView
 class DemosAdapter(private val dataset: Array<DemosAdapter.Demo>) :
         RecyclerView.Adapter<DemosAdapter.ViewHolder>() {
 
-    data class Demo(val title: String, val description : String, val layout : Int = 0, val activity : Class<*> = DemoActivity::class.java) {
-        constructor(title: String, description: String, activity : Class<*> = DemoActivity::class.java) : this(title, description, 0, activity)
+    data class Demo(val title: String, val description: String, val layout: Int = 0, val activity: Class<*> = DemoActivity::class.java) {
+        constructor(title: String, description: String, activity: Class<*> = DemoActivity::class.java) : this(title, description, 0, activity)
     }
 
     class ViewHolder(val layout: ConstraintLayout) : RecyclerView.ViewHolder(layout) {
         var title = layout.findViewById(R.id.title) as TextView
         var description = layout.findViewById(R.id.description) as TextView
         var layoutFileId = 0
-        var activity : Class<*>? = null
+        var activity: Class<*>? = null
 
         init {
             layout.setOnClickListener {

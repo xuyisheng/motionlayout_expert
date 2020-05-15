@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   Copyright (C) 2020 The Android Open Source Project
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -14,14 +13,12 @@
   limitations under the License.
   -->
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HistogramActivity"
-    >
+    tools:context=".HistogramActivity">
 
     <View
         android:id="@+id/y_axis"
@@ -32,8 +29,7 @@
         android:background="@android:color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/x_axis"
-        />
+        app:layout_constraintBottom_toBottomOf="@id/x_axis" />
 
     <View
         android:id="@+id/x_axis"
@@ -57,8 +53,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/x_axis"
-        tools:showPaths="true"
-        />
+        tools:showPaths="true" />
 
     <Switch
         android:id="@+id/interruptible_switch"
@@ -69,8 +64,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:onClick="onClickSwitch"
-        android:checked="false"
-        />
+        android:checked="false" />
 
     <Button
         android:id="@+id/both"
@@ -84,8 +78,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/sort"
-        />
+        app:layout_constraintBottom_toTopOf="@id/sort" />
 
     <Button
         android:id="@+id/sort"
@@ -99,8 +92,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/add"
-        />
+        app:layout_constraintBottom_toTopOf="@id/add" />
 
     <Button
         android:id="@+id/add"
@@ -114,7 +106,6 @@
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/x_axis"
-        />
+        app:layout_constraintBottom_toTopOf="@id/x_axis" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
